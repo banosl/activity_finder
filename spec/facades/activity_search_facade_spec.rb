@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ActivitySearchFacade do
+  before :each do
+    random_activity_by_participants_stub(3)
+  end
   it 'can return one activity object' do
     activity = ActivitySearchFacade.search_activity(3)
 
