@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "Welcome Page" do 
     describe "visiting '/'" do
+        before :each do
+            party_size = 3
+            random_activity_by_participants_stub(party_size)
+        end
         it 'has a form to search for activities' do 
             visit root_path
             
@@ -19,6 +23,15 @@ RSpec.describe "Welcome Page" do
             expect(current_path).to eq('/activity')
         end
 
-        it 'user sees a description of suggested activity, the number of participants for the activity, and a visual of how pricey that activity would be'
+        it 'user sees a description of suggested activity, the number of participants for the activity, and a visual of how pricey that activity would be'do
+            visit root_path
+
+            fill_in :num_participants, with: 3
+            click_on "Find Activities"
+
+            expect(page).to have_content("Activity: ")
+            expect(page).to have_content("Participants: ")
+            expect(page).to have_content("Price: ")
+        end
     end
 end 
