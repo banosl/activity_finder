@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Activity Service" do
+RSpec.describe ActivityService do
   it 'can generate a random activity' do
     response = ActivityService.get_random_activity_by_participants(3)
 

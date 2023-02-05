@@ -41,6 +41,7 @@ group :development, :test do
   gem "capybara"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faraday'
+  gem 'pry'
 end
 
 group :development do
