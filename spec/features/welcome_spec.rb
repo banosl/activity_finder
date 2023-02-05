@@ -29,9 +29,9 @@ RSpec.describe "Welcome Page" do
             fill_in :num_participants, with: 3
             click_on "Find Activities"
 
-            expect(page).to have_content("Activity: ")
-            expect(page).to have_content("Participants: ")
-            expect(page).to have_content("Price: ")
+            expect(page).to have_content("Activity: Bake a pie with some friends")
+            expect(page).to have_content("Participants: 3")
+            expect(page).to have_content("Price: $")
         end
     end
 end 
