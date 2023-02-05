@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "capybara"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faraday'
 end
 
 group :development do
